@@ -22,26 +22,39 @@ namespace SortingAlgorithmConsole
                 new HeapSort(),
                 new MergeSort(),
                 new QuickSort(),
-                new ShellSort()
+                new ShellSort(),
+                new DotNetLinqSort(),
+                new DotNetArraySort(), 
             };
 
             Console.WriteLine($"Criando vetor para teste.");
-            int[] unsortedVector = GenerateVector(0, 1000, 10000);
+
+            uint valorInicial = 0;
+            uint valorValorFinal = 1000;
+            uint quantidadeNumerosVetor = 100000;
+
+            int[] unsortedVector = GenerateVector(valorInicial, valorValorFinal, quantidadeNumerosVetor);
+
+            Console.WriteLine($"Hash do vetor para ordenação: {CheckSum(unsortedVector)}");
 
             Console.WriteLine($"Iniciando Algorítimos de Ordenação.");
+            Console.WriteLine();
             for (int i = 0; i < sortingAlgorithms.Length; i++)
             {
-                Console.Write($"Algorithm: {sortingAlgorithms[i].ToString()}");
                 var unsortedVectorTest = unsortedVector.Clone() as int[];
+                Console.Write($"Hash desordenado: {CheckSum(unsortedVectorTest)} => ");
+                Console.Write($"Algorithm: {sortingAlgorithms[i].ToString()}");
+                
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
-                sortingAlgorithms[i].Sort(unsortedVectorTest);
+                unsortedVectorTest = sortingAlgorithms[i].Sort(unsortedVectorTest);
                 stopwatch.Stop();
-                Console.WriteLine($" => {stopwatch.ElapsedMilliseconds} milliseconds");
+                Console.Write($" => {stopwatch.ElapsedMilliseconds} milliseconds");
+                Console.WriteLine($" => Hash ordenado: {CheckSum(unsortedVectorTest)}.");
             }
 
             Console.WriteLine();
-            Console.WriteLine("Terminado.");
+            Console.WriteLine("Finalizado.");
             Console.ReadKey();
         }
 

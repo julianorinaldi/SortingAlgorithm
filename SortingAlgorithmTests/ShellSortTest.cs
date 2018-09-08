@@ -9,7 +9,7 @@ namespace SortingAlgorithmTests
         public void ShellSort()
         {
             var algorithm = new ShellSort();
-            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector);
+            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector());
             Assert.Equal(DataDefinition.SortedVector, sortedVector);
         }
     }

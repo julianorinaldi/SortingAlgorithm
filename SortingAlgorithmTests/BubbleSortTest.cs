@@ -9,7 +9,7 @@ namespace SortingAlgorithmTests
         public void BubbleSort()
         {
             var algorithm = new BubbleSort();
-            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector);
+            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector());
             Assert.Equal(DataDefinition.SortedVector, sortedVector);
         }
     }

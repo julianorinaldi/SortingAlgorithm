@@ -9,7 +9,7 @@ namespace SortingAlgorithmTests
         public void QuickSort()
         {
             var algorithm = new QuickSort();
-            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector);
+            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector());
             Assert.Equal(DataDefinition.SortedVector, sortedVector);
         }
     }

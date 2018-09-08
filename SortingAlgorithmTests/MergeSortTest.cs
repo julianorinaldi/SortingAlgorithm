@@ -9,7 +9,7 @@ namespace SortingAlgorithmTests
         public void MergeSort()
         {
             var algorithm = new MergeSort();
-            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector);
+            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector());
             Assert.Equal(DataDefinition.SortedVector, sortedVector);
         }
     }

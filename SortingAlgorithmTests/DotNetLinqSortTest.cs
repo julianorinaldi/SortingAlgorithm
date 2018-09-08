@@ -3,12 +3,12 @@ using Xunit;
 
 namespace SortingAlgorithmTests
 {
-    public class SelectionSortTest
+    public class DotNetLinqSortTest
     {
         [Fact]
-        public void SelectionSort()
+        public void DotNetLinqSort()
         {
-            var algorithm = new SelectionSort();
+            var algorithm = new DotNetLinqSort();
             var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector());
             Assert.Equal(DataDefinition.SortedVector, sortedVector);
         }

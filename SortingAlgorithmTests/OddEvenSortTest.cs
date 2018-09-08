@@ -9,7 +9,7 @@ namespace SortingAlgorithmTests
         public void OddEvenSort()
         {
             var algorithm = new OddEvenSort();
-            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector);
+            var sortedVector = algorithm.Sort(DataDefinition.UnsortedVector());
             Assert.Equal(DataDefinition.SortedVector, sortedVector);
         }
     }
